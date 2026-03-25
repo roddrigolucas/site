@@ -1,0 +1,148 @@
+{
+  "name": "website-certifikedu",
+  "version": "1.0.0",
+  "packageManager": "npm@9.6.7",
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/certifikedu-code/website"
+  },
+  "contributors": [
+    "Luiz Guarinel <luiz.guarinel@certifikedu.com>",
+    "Vinicius Rocha <vinicius.rocha@certifikedu.com>"
+  ],
+  "private": true,
+  "scripts": {
+    "dev": "next dev && NODE_ENV=development",
+    "build": "next build && NODE_ENV=production",
+    "start": "next start",
+    "lint:eslint": "eslint --fix src --max-warnings 0",
+    "lint:prettier": "prettier --write src",
+    "lint": "npm run lint:eslint && npm run lint:prettier",
+    "tsc": "tsc",
+    "format": "next lint --fix && prettier '**/*.{json,yaml}' --write --ignore-path .gitignore",
+    "check-types": "tsc --noEmit --pretty",
+    "commit": "cz",
+    "prepare": "husky install",
+    "postbuild": "next-sitemap --config next.sitemap.config.cjs"
+  },
+  "dependencies": {
+    "@formatjs/intl-localematcher": "^0.5.4",
+    "@hookform/resolvers": "^3.3.4",
+    "@next/bundle-analyzer": "^14.0.4",
+    "@portabletext/react": "^3.0.11",
+    "@radix-ui/react-accordion": "^1.1.2",
+    "@radix-ui/react-aspect-ratio": "^1.0.3",
+    "@radix-ui/react-dialog": "^1.0.5",
+    "@radix-ui/react-hover-card": "^1.0.7",
+    "@radix-ui/react-label": "^2.0.2",
+    "@radix-ui/react-navigation-menu": "^1.1.4",
+    "@radix-ui/react-popover": "^1.0.7",
+    "@radix-ui/react-scroll-area": "^1.0.5",
+    "@radix-ui/react-separator": "^1.0.3",
+    "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-tabs": "^1.0.4",
+    "@radix-ui/react-tooltip": "^1.0.7",
+    "@sanity/client": "^6.11.1",
+    "@sanity/image-url": "^1.0.2",
+    "@sanity/overlays": "^2.3.7",
+    "@sanity/preview-url-secret": "^1.5.3",
+    "@sanity/react-loader": "^1.7.5",
+    "@t3-oss/env-nextjs": "^0.7.3",
+    "@types/negotiator": "^0.6.3",
+    "axios": "^1.6.5",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
+    "cmdk": "^0.2.0",
+    "embla-carousel-react": "^8.0.0-rc19",
+    "framer-motion": "^10.18.0",
+    "lucide-react": "^0.311.0",
+    "negotiator": "^0.6.3",
+    "next": "^14.0.4",
+    "next-sanity": "^7.0.12",
+    "next-sitemap": "^4.2.3",
+    "next-themes": "^0.2.1",
+    "nextjs-progressbar": "^0.0.16",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-hook-form": "^7.49.3",
+    "react-icons": "^5.0.1",
+    "sonner": "^1.3.1",
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "^3.22.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.(js,jsx,ts,tsx)": [
+      "npm run pre-commit-lint",
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      [
+        "@semantic-release/npm",
+        {
+          "npmPublish": false
+        }
+      ],
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^18.4.4",
+    "@commitlint/config-conventional": "^18.4.4",
+    "@commitlint/cz-commitlint": "^18.4.4",
+    "@ianvs/prettier-plugin-sort-imports": "^4.1.1",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@types/gtag.js": "^0.0.18",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "@typescript-eslint/parser": "^6.19.0",
+    "autoprefixer": "^10.4.16",
+    "commitizen": "^4.3.0",
+    "eslint": "^8.56.0",
+    "eslint-config-esnext": "^4.1.0",
+    "eslint-config-next": "^14.0.4",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-import-resolver-node": "^0.3.9",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-no-comments": "^1.1.10",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-tailwindcss": "^3.14.0",
+    "eslint-plugin-unused-imports": "^3.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "postcss": "^8",
+    "prettier": "^3.2.3",
+    "prettier-plugin-tailwindcss": "^0.5.11",
+    "tailwind-merge": "^2.2.0",
+    "tailwindcss": "^3.3.0",
+    "tailwindcss-3d": "^1.0.4",
+    "typescript": "^5"
+  }
+}

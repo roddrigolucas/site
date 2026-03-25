@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://certifikedu.com/
+
+# Sitemaps
+Sitemap: https://certifikedu.com/sitemap.xml
