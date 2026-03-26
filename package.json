@@ -16,7 +16,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev && NODE_ENV=development",
-    "build": "next build && NODE_ENV=production",
+    "build": "next build",
     "start": "next start",
     "lint:eslint": "eslint --fix src --max-warnings 0",
     "lint:prettier": "prettier --write src",
