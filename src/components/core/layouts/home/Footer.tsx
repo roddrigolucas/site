@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { baseConfig } from '@/sanity/lib/client';
 import { FooterNavigationItemType, SocialType } from '@/sanity/queries/config';
 import { SanityImage } from '@/sanity/queries/default';
@@ -81,9 +80,9 @@ function FooterMenu({ navigation }: Readonly<Props>) {
                     height={20}
                   />
                 )}
-                <Link href={item.anchor.url} className="text-sm text-white md:text-base">
+                <a href={item.anchor.url} className="text-sm text-white md:text-base">
                   {item.anchor.label}
-                </Link>
+                </a>
               </div>
             ))}
           </div>

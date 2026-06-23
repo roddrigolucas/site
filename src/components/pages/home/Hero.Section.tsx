@@ -2,7 +2,6 @@
 
 import { ReactNode } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { baseConfig } from '@/sanity/lib/client';
 import { Anchor, SanityImage } from '@/sanity/queries/default';
 import { CompanyType } from '@/sanity/queries/home';
@@ -72,9 +71,9 @@ export function HeroSection({
             </div>
             <div className="flex flex-col gap-2 md:flex-row">
               <Input placeholder={input.placeholder} />
-              <Link href={button.url} target={button.isExternal ? '_blank' : ''}>
+              <a href={button.url} target={button.isExternal ? '_blank' : ''}>
                 <Button disabled={button.isDisabled}>{button.label}</Button>
-              </Link>
+              </a>
             </div>
           </motion.div>
           <Dialog>

@@ -131,13 +131,13 @@ export function NavBar({ logo, navigation, actions, language }: Readonly<Props>)
             </NavigationMenuList>
           </NavigationMenu>
           <div className="hidden items-center gap-4 lg:inline-flex">
-            <Link href={actions.register.url} passHref>
+            <a href={actions.register.url}>
               <Button disabled={actions.register.isDisabled} variant="ghostSecondary">
                 <UserIcon className="mr-2 size-4" />
                 {actions.register.label}
               </Button>
-            </Link>
-            <Link href={actions.cta.url} passHref>
+            </a>
+            <a href={actions.cta.url}>
               <Button
                 disabled={actions.cta.isDisabled}
                 variant="secondary"
@@ -149,17 +149,17 @@ export function NavBar({ logo, navigation, actions, language }: Readonly<Props>)
                 </span>
                 {actions.cta.label}
               </Button>
-            </Link>
+            </a>
             <LanguageBar language={language} />
           </div>
           <div className="inline-flex items-center gap-4 lg:hidden">
             <div className="inline-flex gap-2">
-              <Link href={actions.register.url} passHref>
+              <a href={actions.register.url}>
                 <Button disabled={actions.register.isDisabled} size="sm" variant="default">
                   <UserIcon className="mr-2 size-5" />
                   {actions.register.label}
                 </Button>
-              </Link>
+              </a>
             </div>
             <MobileSheet logo={logo} navigation={navigation} actions={actions} />
           </div>
@@ -289,7 +289,7 @@ const MobileSheet = ({ logo, navigation, actions }: Readonly<Omit<Props, 'langua
         </SheetHeader>
         <SheetFooter className="w-full p-4">
           <div className="flex w-full flex-col gap-2">
-            <Link href={actions.register.url} passHref>
+            <a href={actions.register.url} className="w-full">
               <Button
                 disabled={actions.register.isDisabled}
                 variant="ghostSecondary"
@@ -299,8 +299,8 @@ const MobileSheet = ({ logo, navigation, actions }: Readonly<Omit<Props, 'langua
                 <UserIcon className="mr-2 size-4" />
                 {actions.register.label}
               </Button>
-            </Link>
-            <Link href={actions.cta.url} passHref>
+            </a>
+            <a href={actions.cta.url} className="w-full">
               <Button
                 disabled={actions.cta.isDisabled}
                 variant="secondary"
@@ -313,7 +313,7 @@ const MobileSheet = ({ logo, navigation, actions }: Readonly<Omit<Props, 'langua
                 </span>
                 {actions.cta.label}
               </Button>
-            </Link>
+            </a>
           </div>
         </SheetFooter>
         <SheetDescription asChild className="flex flex-col items-center justify-between">

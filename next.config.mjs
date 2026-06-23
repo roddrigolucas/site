@@ -20,17 +20,18 @@ const nextConfig = {
   poweredByHeader: false,
   trailingSlash: true,
   images: {
+    unoptimized: true,
     dangerouslyAllowSVG: true,
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'cdn.sanity.io',
-        pathname: '**',
+        pathname: '/**',
       },
       {
         protocol: 'https',
         hostname: 'commondatastorage.googleapis.com',
-        pathname: '**',
+        pathname: '/**',
       },
     ],
   },
