@@ -39,3 +39,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 This repository is configured with GitHub Actions to automatically deploy to the Hostinger VPS on every push to the `main` or `master` branches.
 
+Last deploy test: 2026-07-30 (v1.0.1)
+
+
